@@ -1,7 +1,7 @@
 import os, sys
 from ..ext.errorHandling import valueError
 
-def translateBinary(binary):
+def translateBinary(binary, bytes):
     try:
         if not isinstance(binary, int):
              print(valueError, file=sys.stderr), sys.exit()
@@ -25,4 +25,5 @@ def translateBinary(binary):
         return binarySum
     except Exception as error:
         print(error, file=sys.stderr), sys.exit()
+
 

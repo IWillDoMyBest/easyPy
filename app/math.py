@@ -1,5 +1,5 @@
 import sys, os
-from errorHandling import listError, valueError
+from ..ext.errorHandling import listError, valueError
 
 def pq(x, p, q): #Pq-formeln
 	try:
@@ -14,18 +14,18 @@ def pq(x, p, q): #Pq-formeln
 	except Exception as error:
 		print(error, file=sys.stderr), sys.exit()
 
-def root(x): #Roten ur
+def root(x):
 	try:
-		if not isinstance(x, int):
+		if not isinstance(x, (int, float)):
 			print(valueError, file=sys.stderr), sys.exit()
 		if not x < 0:
-			return x**0.5
+			return round(x**0.5, 2)
 		return str(round((x*-1)**0.5, 2)) + "i"
 
 	except Exception as error:
 		print(error, file=sys.stderr), sys.exit()
 
-def distance(x, y): #
+def distance(x, y):
 	try:
 		if not isinstance(x, (int, float)) and not isinstance(y, (int, float)):
 			print(valueError, file=sys.stderr), sys.exit()
@@ -33,7 +33,7 @@ def distance(x, y): #
 	except Exception as error:
 		print(error, file=sys.stderr), sys.exit()
 
-def sqrRulepos(x, y): #Första kvadreringsregeln
+def sqrRulepos(x, y):
 	try:
 		if not isinstance(x, (int, float)) and not isinstance(y, (int, float)):
 			print(valueError, file=sys.stderr), sys.exit()
@@ -41,7 +41,7 @@ def sqrRulepos(x, y): #Första kvadreringsregeln
 	except Exception as error:
 		print(error, file=sys.stderr), sys.exit()
 
-def sqrRuleneg(x,y): #Andra kvadreringsregeln
+def sqrRuleneg(x,y):
 	try:
 		if not isinstance(x, (int, float)) and not isinstance(y, (int, float)):
 			print(valueError, file=sys.stderr), sys.exit()
@@ -49,7 +49,7 @@ def sqrRuleneg(x,y): #Andra kvadreringsregeln
 	except Exception as error:
 		print(error, file=sys.stderr), sys.exit()
 
-def slope(x1,x2,y1,y2): #Lutningen på en rät linje
+def slope(x1,x2,y1,y2):
 	try: 
 		if not isinstance(x1, (int, float)) and not isinstance(x2, (int, float)) and not (y1, (int, float)) and not (y2, (int, float)):
 			print(valueError, file=sys.stderr), sys.exit()
