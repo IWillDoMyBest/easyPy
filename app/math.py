@@ -1,7 +1,9 @@
+#Elias Wickander - 2017/?/?
 import sys, os
 from ..ext.errorHandling import listError, valueError
 
-def pq(x, p, q): #Pq-formeln
+#Harry Lazaridis - 2018
+def pq(x, p, q):
 	try:
 		if isinstance(x, int or float) and isinstance(p, int or float) and (q, int or float):
 			if x != 1:
